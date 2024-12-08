@@ -174,6 +174,24 @@ delete from "SKILL" where name = '空中瑜伽';
     -- 6. 最大授課人數`max_participants` 設定為10
     -- 7. 授課連結設定`meeting_url`為 https://test-meeting.test.io
 
+insert into "COURSE" (user_id, skill_id, name, start_at, end_at, max_participants, meeting_url) values
+(
+    --教練設定為用戶`李燕容` 
+    (select id from "USER" where email = 'lee2000@hexschooltest.io'),
+    --在課程專長 `skill_id` 上設定為「 `重訓` 」
+    (select id from "SKILL" where name = '重訓'),
+    --授在課程名稱上，設定為「`重訓基礎課`」
+    '重訓基礎課',
+    --授課開始時間`start_at`設定為2024-11-25 14:00:00
+    '2024-11-25 14:00:00',
+    --授課結束時間`end_at`設定為2024-11-25 16:00:00
+    '2024-11-25 16:00:00',
+    --最大授課人數`max_participants` 設定為10
+    10,
+    --授課連結設定`meeting_url`為 https://test-meeting.test.io
+    'https://test-meeting.test.io'
+);
+
 
 -- ████████  █████   █    █████ 
 --   █ █   ██    █  █     █     
