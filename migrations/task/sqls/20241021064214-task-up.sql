@@ -257,8 +257,7 @@ select * from "COURSE_BOOKING" where user_id = (select id from "USER" where emai
     -- 2. 狀態`status` 設定為上課中
     
 update "COURSE_BOOKING" set join_at = '2024-11-25 14:01:50', status = '上課中' where user_id = (select id from "USER" where email = 'wXlTq@hexschooltest.io') and status = '即將授課'
-and "course_id" = (select "id" from "COURSE" where "user_id" = (select "id" from "USER" where "email" = 'lee2000@hexschooltest.io')) 
-
+and "course_id" = (select "id" from "COURSE" where "user_id" = (select "id" from "USER" where "email" = 'lee2000@hexschooltest.io'));
 
 -- 5-6. 查詢：計算用戶王小明的購買堂數，顯示須包含以下欄位： user_id , total。 (需使用到 SUM 函式與 Group By)
 select "CREDIT_PURCHASE".user_id, sum("CREDIT_PURCHASE".purchased_credits) as total from "CREDIT_PURCHASE" 
