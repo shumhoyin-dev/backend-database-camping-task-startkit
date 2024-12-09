@@ -98,7 +98,7 @@ insert into "COACH" (user_id, experience_years, description) values
 ),
 (   --將用戶`Q太郎`新增為教練，並且年資設定為2年
     (select id from "USER" where email = 'starplatinum@hexschooltest.io'), 2,'新增教練'
-)
+);
 
 
 
